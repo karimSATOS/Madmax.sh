@@ -42,7 +42,13 @@ IMG_ON_MEDIA=usb0
 
 # the following cammand is to close the window of hotkey (or other plugin) first (you don't need it, because messages are shown in OSD messages, wait a bit after starting the script and then you will see the messages).
 $WGET -q -O - $BOXIP/web/remotecontrol?command=174 && sleep 2
+opkg install --force-overweite- http://178.63.156.75/paneladdons/skins/OpenATV/enigma2-plugin-skins-madmax-impossible_2.4_all.ipk
 
+wait
+
+sleep 2;
+
+exit 0;  
 # General Logging.
 exec 3>&1 4>&2
 trap 'exec 2>&4 1>&3' 0 1 2 3
@@ -53,7 +59,13 @@ STARTDATE="$(date +%a.%d.%b.%Y-%H:%M:%S)" && echo -e "\n\nJOB START -> $STARTDAT
 $WGET -O - -q "$BOXIP/web/message?text=Start%20Partitioning%20on%20${DEV}%20...%20->%20$STARTDATE&type=1&timeout=8" > /dev/null && sleep 3
 
 # OSD Error Output.
-osd_error_message() {
+osd_error_message() {opkg install --force-overweite- http://178.63.156.75/paneladdons/skins/OpenATV/enigma2-plugin-skins-madmax-impossible_2.4_all.ipk
+
+wait
+
+sleep 2;
+
+exit 0;  
     sleep 11
 	$WGET -O - -q "$BOXIP/web/message?text=ABORT%20---%20Details%20thereto%20in%3B%0A$LOGFILE%20&type=3" > /dev/null
 	echo ""
